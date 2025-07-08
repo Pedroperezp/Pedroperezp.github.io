@@ -1,0 +1,133 @@
+:root {
+  /* Tema Claro (Tu diseño original) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #ffffff; /* Modal background */
+    --header-color: #2a2a2a;
+    --text-color: #3c3b3b;
+    --brand-color: #2ca9e0;
+    --button-bg: #2ca9e0;
+    --button-text: #ffffff;
+  --border-color: #dee2e6; /* Color de borde de Bootstrap */
+}
+
+body.dark-mode {
+  /* Tema Oscuro */
+    --bg-primary: #393636;
+    --bg-secondary: #3f3d3d;
+    --header-color: #f3f4f5;
+    --text-color: #f3f4f5;
+    --border-color: #495057;
+}
+
+/* Transición suave entre temas */
+body, .modal-content {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos Generales */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+}
+
+h1 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    color: var(--header-color);
+}
+
+h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: var(--header-color);
+}
+
+p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+hr {
+    color: var(--border-color);
+}
+
+/* Encabezado */
+.encabezado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.encabezado img {
+    height: 150px;
+    width: auto;
+}
+
+.encabezado h1:hover {
+    color: var(--brand-color);
+}
+
+/* Botones */
+.contenedor-boton {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.btn-condiciones {
+    color: var(--button-text);
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: var(--button-bg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-condiciones:active {
+    font-size: 20px;
+}
+
+/* Estilos para el Modal de Bootstrap */
+.modal-content {
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+}
+
+.modal-header {
+    border-bottom-color: var(--border-color);
+}
+
+.modal-footer {
+    border-top-color: var(--border-color);
+}
+
+body.dark-mode .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Interruptor de Tema */
+.interruptor-tema-fijo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--button-bg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--button-text);
+}

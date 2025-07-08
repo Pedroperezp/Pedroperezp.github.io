@@ -1,0 +1,234 @@
+:root {
+  /* Tema Claro (Tu diseño original) */
+  --bg-primary: #f3f4f5;
+  --bg-secondary: #ffffff;
+  --header-color: #2a2a2a;
+  --text-color: #3c3b3b;
+  --brand-color: #2ca9e0; /* Color azul para títulos especiales */
+  --button-bg: #2ca9e0;
+  --button-text: #ffffff;
+  --navbar-bg: #f3f4f5;
+}
+
+body.dark-mode {
+  /* Tema Oscuro (Con los ajustes que pediste) */
+  --bg-primary: #393636;   /* El más oscuro para el fondo */
+  --bg-secondary: #3f3d3d; /* El más claro para las tarjetas */
+  --header-color: #f3f4f5;
+  --text-color: #f3f4f5;
+  --navbar-bg: #3f3d3d;
+}
+
+/* Transición suave entre temas */
+body, .navbar, .nav-link, .seccion-mision-vision, .seccion-programas, 
+.seccion-segmento-trabajo, .tarjeta-objetivo, .lista-segmentos li, .programa-item {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos Generales */
+body {
+    background-color: var(--bg-primary);
+}
+
+h1, .titulo-principal {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    color: var(--header-color);
+}
+
+h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: var(--header-color);
+}
+
+p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-bg) !important;
+}
+.nav-link {
+    color: var(--text-color) !important;
+}
+
+/* Botones */
+.btn {
+    border-color: var(--button-bg);
+    background-color: var(--button-bg);
+}
+
+.btn:hover {
+    background-color: #4a8dbb;
+    border-color: #4a8dbb;
+}
+
+.btn-outline-success {
+    color: var(--button-text);
+}
+
+/* Secciones */
+.seccion-mision-vision {
+    background-color: var(--bg-secondary);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.seccion-programas, .seccion-segmento-trabajo, .seccion-objetivos-generales {
+    background-color: var(--bg-primary);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.misionVision {
+    text-align: center;
+    background-color: var(--bg-primary);
+}
+
+.contenedor-objetivos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    background-color: var(--bg-primary);
+}
+
+.tarjeta-objetivo {
+    background-color: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+}
+
+.tarjeta-objetivo h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.tarjeta-objetivo p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.subtitulo {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.espacio-final {
+    height: 5vh;
+    background-color: var(--bg-primary);
+}
+
+.contenedor-programa {
+    background-color: var(--bg-primary);
+    padding: 1px 0;
+}
+
+.programa-item {
+    margin: 0 auto 3rem auto;
+    max-width: 800px;
+    width: 90%;
+    background-color: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.programa-item h2 {
+    text-align: center;
+    color: var(--brand-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.programa-item ul {
+    padding: 0; 
+    list-style-position: inside; 
+    text-align: center; 
+}
+
+.programa-item li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.lista-segmentos {
+    list-style: none;
+    padding: 0 0 60px 0;
+    counter-reset: segmentos-counter;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--bg-primary);
+}
+
+.lista-segmentos li {
+    background-color: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    max-width: 700px;
+    width: 90%;
+    position: relative;
+    padding-left: 5rem;
+}
+
+.lista-segmentos li::before {
+    counter-increment: segmentos-counter;
+    content: counter(segmentos-counter) ".";
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.lista-segmentos li h2 {
+    font-size: 1.8rem;
+    color: var(--header-color);
+    margin: 0 0 0.5rem 0;
+}
+
+.lista-segmentos li p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+p, h2, strong {
+    margin-left: 20px;
+}
+
+.interruptor-tema-fijo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--button-bg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--button-text);
+}

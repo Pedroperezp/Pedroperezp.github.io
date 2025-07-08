@@ -1,0 +1,241 @@
+/* Paleta de colores y transiciones */
+:root {
+  /* Tema Claro */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f5;
+    --card-bg: #ffffff;
+    --header-color: #2a2a2a;
+    --text-color: #3c3b3b;
+    --button-bg: #2ca9e0;
+    --button-text: #ffffff;
+    --navbar-bg: #f3f4f5;
+}
+
+body.dark-mode {
+  /* Tema Oscuro */
+    --bg-primary: #393636;
+    --bg-secondary: #393636;
+    --card-bg: #3f3d3d;
+    --header-color: #f3f4f5;
+    --text-color: #f3f4f5;
+    --navbar-bg: #3f3d3d;
+}
+
+/* Transición suave entre temas */
+body, .carta, .seccion-unete, .carrousel-contenedor, .carousel-item, 
+.contenedor-boton, .pie-de-pagina, .navbar, .nav-link {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos Generales */
+body {
+    background-color: var(--bg-primary);
+}
+
+h1, .titulo-principal {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    color: var(--header-color);
+}
+
+h2, .pie-de-pagina h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: var(--header-color);
+}
+
+p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+h5 {
+    color: var(--header-color);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-bg) !important; /* Importante para sobreescribir estilos en línea */
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+}
+
+
+/* Botones */
+.btn {
+    border-color: var(--button-bg);
+    background-color: var(--button-bg);
+}
+
+.btn-outline-success, .btn-conoceMas {
+    color: var(--button-text);
+    background-color: var(--button-bg);
+}
+
+.btn-conoceMas {
+    border: none;
+    padding: 15px 32px;
+    font-size: 20px;
+    font-family: 'Manrope', Bold;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+/* Contenido Principal */
+.imagen {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    height: 109vh;
+}
+
+.carta {
+    background-color: var(--card-bg);
+    width: clamp(400px, 80%, 800px);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carta img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+.seccion-unete {
+    background-color: var(--bg-primary);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.titulo-principal {
+    font-size: 40px;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-family: 'Nunito sans';
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+/* Carrusel */
+.carrousel-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    background-color: var(--bg-secondary);
+}
+
+#carouselExampleIndicators {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.carousel-item {
+    background-color: var(--bg-secondary);
+}
+.carousel-item img{
+    width: 100%;
+    height: auto;
+}
+
+.description-carrusel {
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Contenedor Botón "Conoce Más" */
+.contenedor-boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: var(--bg-secondary);
+    padding: 80px 20px;
+}
+
+/* Pie de página */
+.pie-de-pagina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+    padding: 60px 20px;
+}
+
+.pie-de-pagina p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.pie-de-pagina .direccion strong {
+    font-weight: bold;
+}
+
+.boton-llegar {
+    display: inline-block;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.boton-llegar:hover {
+    background-color: #4a8dbb;
+}
+
+.iconos-sociales {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.iconos-sociales a {
+    margin: 0 12px;
+}
+
+/* Interruptor de Tema */
+.interruptor-tema-fijo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--button-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--button-text);
+}
